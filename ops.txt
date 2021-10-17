@@ -26,11 +26,11 @@ export default App;
 yarn add @craco/craco
 
 并修改 package.json 里的 scripts 属性，带backup是修改之前的内容：
-"scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+ "scripts": {
+    "start": "craco  start",
+    "build": "craco  build",
+    "test": "craco  test",
+    "eject": "craco  eject",
     "start-backup": "react-scripts start",
     "build-backup": "react-scripts build",
     "test-backup": "react-scripts test",
