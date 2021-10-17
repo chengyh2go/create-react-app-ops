@@ -22,5 +22,54 @@ export default App;
 @import '~antd/dist/antd.css';
 
 
+修改主题，比如修改主题颜色，需要高级配置，操作步骤：
+yarn add @craco/craco
+
+并修改 package.json 里的 scripts 属性，带backup是修改之前的内容：
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-backup": "react-scripts start",
+    "build-backup": "react-scripts build",
+    "test-backup": "react-scripts test",
+    "eject-backup": "react-scripts eject"
+  },
+  
+在项目根目录创建一个 craco.config.js 用于修改默认配置。
+  
+下面就是自定义主题配置的步骤：
+安装craco-less
+yarn add craco-less
+  
+修改配置文件craco.config.js：
+  const CracoLessPlugin = require('craco-less');
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoLessPlugin,
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            modifyVars: { '@primary-color': '#1DA57A' },
+            javascriptEnabled: true,
+          },
+        },
+      },
+    },
+  ],
+};
+
+把 src/App.css 文件修改为 src/App.less，然后修改样式引用为 less 文件。
+/* src/App.less */
+- @import '~antd/dist/antd.css';
++ @import '~antd/dist/antd.less';
+
+/* src/App.js */
+- import './App.css';
++ import './App.less';
+
 
 
