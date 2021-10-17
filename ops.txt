@@ -1,4 +1,8 @@
 以项目名为manager为例：
 yarn create react-app manager
 
+cd manager
+yarn add antd
+
+
 
