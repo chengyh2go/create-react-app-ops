@@ -4,5 +4,23 @@ yarn create react-app manager
 cd manager
 yarn add antd
 
+安装完antd之后，改造App.js
+import React from "react";
+import {Button} from "antd";
+import './App.css';
+
+const App = () => {
+  return <div className="App">
+    <Button type="primary">button</Button>
+  </div>
+}
+
+export default App;
+
+
+改造App.css
+@import '~antd/dist/antd.css';
+
+
 
 
